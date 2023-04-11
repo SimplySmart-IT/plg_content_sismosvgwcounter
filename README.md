@@ -52,7 +52,7 @@
 *Die Test-Datei im Ordner TestData dient nur zu **Testzwecken**.*\
 *Quelle der Daten ist die PDF-Datei [Integration Manual for Publishers - REST (Stand: 21.02.2023)](https://tom.vgwort.de/Documents/pdfs/dokumentation/metis/DOC_Verlagsmeldung_REST_EN.pdf) direkt aus dem Hilfeportal des VG Wort T.O.M Systems. - Stand: 07.04.2023*\
 
-***Bitte den Ordner TestData nicht in ein Produktsystem mit übernehmen!***
+***Bitte den Ordner TestData nicht in ein Produktivsystem übernehmen!***
 
 ## :sparkles: Features ##
 
@@ -82,12 +82,12 @@ The following tools were used to create this this project:
 
 ## :white_check_mark: Requirements ##
 
-Um dieses Plugin nutzen zu können, wird eine Joomla Installation in der Version 4 oder höher benötigt ([Joomla](https://www.joomla.org/)[^1] - [Joomla auf Deutsch](https://www.joomla.de/))[^1], sowie die Registrierung als Urheber bei der [VG WORT - T.exte O.nline M.elden](https://tom.vgwort.de/portal/index) [^2].
+Um dieses Plugin nutzen zu können, wird eine Joomla Installation in der Version 4 oder höher benötigt ([Joomla](https://www.joomla.org/) - [Joomla auf Deutsch](https://www.joomla.de/)) [^1], sowie die Registrierung als Urheber bei der [VG WORT - T.exte O.nline M.elden](https://tom.vgwort.de/portal/index) [^2].
 
 ## :checkered_flag: Let's start ##
 
 Das Plugin kann als Beta-Version zum testen bereits heruntergeladen werden. 
-Diese Erweiterung befindet sich noch in einer frühen Beta-Phase. Ich empfehle Ihnen nicht sie bereits auf einer Live-Website einzusetzen.
+Diese Erweiterung befindet sich noch in einer frühen Beta-Phase. Ich empfehle nicht sie bereits auf einer Live-Website einzusetzen.
 
 ### Schritt 1 - Installation und Grundeinstellungen
 
@@ -96,7 +96,7 @@ Suchen Sie das Plugin in der Plugin-Liste und aktivieren Sie es gegebenfalls.
 
 ![Screenshot Plugin ](docs/Plugin_Screenshot1.jpg)
 
-Die vordefinierten Standardwerte kommen aus der derzeit gültigen Systembeschreibung für Urheber der VG-WORT (Stand: 06.02.2023). Die Angaben können jederzeit nach Bedarf geändert werden. Bitte informieren Sie sich für die passenden Werte direkt bei der VG WORT [VG WORT - Hilfe](https://tom.vgwort.de/portal/showHelp)
+Die vordefinierten Standardwerte kommen aus der derzeit gültigen Systembeschreibung für Urheber der VG-WORT (Stand: 06.02.2023). Die Angaben können nach Bedarf jederzeit geändert werden. Bitte informieren Sie sich über die passenden Werte direkt bei der VG WORT [VG WORT - Hilfe](https://tom.vgwort.de/portal/showHelp)
 
 ### Schritt 2 - Zählmarken import
 
@@ -108,30 +108,30 @@ Bitte achten Sie darauf, dass Sie die Zählmarken-Liste mit den reinen Identifik
 Eine Testdatei finden Sie in diesem Repository im Ordner TestData.
 
 Wählen Sie nun den Tab **Import VG WORT** in den Plugin-Einstellungen.
-Erstellen oder wählen Sie einen vorhanden Kontakt aus, dem die Liste zugeordnet werden soll und importieren Sie die Datei. So können Sie auch die Zählermarken mehrerer Autoren für Ihre Joomla Seite verwalten.
+Erstellen oder wählen Sie einen vorhanden Kontakt aus, dem die Liste zugeordnet werden soll und importieren Sie die Datei. So können Sie auch die Zählmarken mehrerer Autoren für Ihre Joomla Seite verwalten.
 
 ![Screenshot Import](docs/Plugin_Screenshot2.jpg)
 ![Screenshot Import erfolgreich ](docs/Plugin_Screenshot3.jpg)
 
-Im Reiter **Liste VG WORT** finden Sie nach dem neu laden der Seite alle importierten Zählmarken.
+Im Reiter **Liste VG WORT** finden Sie nach dem erneuten laden der Seite alle importierten Zählmarken.
 
 ![Screenshot Import Liste ](docs/Plugin_Screenshot4.jpg)
 
 ### Schritt 3 - Zuordnung zu Beiträgen / Artikeln
 
-In der Editor Ansicht für einen Beitrag finden Sie im Reiter **Optionen** die Autoren-Einstellungen.
+In der Bearbeitungs-Ansicht für einen Beitrag finden Sie im Reiter **Optionen** die Autoren-Einstellungen.
 Hier wählen Sie im Feld **Kontakt VGWORT Pixel** den passenden Kontakt aus, von dessen Zählermarken-Liste eine ID zugeordnet werden soll.
 
 ![Screenshot Beitrag](docs/Plugin_Screenshot5.jpeg)
 
-Sobald Ihr Beitrag mindestens die in den Plugin-Einstellungen ausgewählte Zeichenanzahl erreicht und ein Kontakt zugeordnet ist, wird beim Speichern automatisch eine Zählmarke zugeordnet.
+Sobald Ihr Beitrag mindestens die in den Plugin-Einstellungen ausgewählte Text-Länge erreicht und ein Kontakt zugeordnet ist, wird beim Speichern automatisch eine Zählmarke zugeordnet.
 
-Es werden dabei der reine Text berücksichtig und vorab Bilder und Tabellen entsprechend der Dokumentation der VG WORT herausgefiltert.
+Es wird dabei der reine Text berücksichtig und vorab Bilder und Tabellen entsprechend der Dokumentation der VG WORT herausgefiltert.
 
 ![Screenshot Beitrag](docs/Plugin_Screenshot6.jpeg)
 
 ### Schritt 4
-Verknüpfungen von Marken zu Inhalten können nach Veröffentlichung nicht mehr entfernt werden. Wenn Sie den Kontakt aus dem Feld im Beitrag entfernen wird die Marke in der Frontend-Ansicht aber nicht mehr Berücksichtigt / angezeigt.
+Verknüpfungen von Zählmarken zu Inhalten können nach Veröffentlichung nicht mehr entfernt werden. Wenn Sie den Kontakt aus dem Feld im Beitrag entfernen wird die Marke in der Frontend-Ansicht aber nicht mehr berücksichtigt / angezeigt.
 
 ![Screenshot Beitrag](docs/Plugin_Screenshot7.jpeg)
 
@@ -144,20 +144,14 @@ Sie können in der Listen-Ansicht im Plugin sehen, welche Marken bereits eine Zu
 Entsprechend der Dokumentation der VG WORT werden die Marken in Ihren Beiträgen unterschiedlich eingefügt.
 In der einfachen Beitragsansicht werden die Zählmarken ohne Lazy-Loading am Anfang des Textes eingefügt. Hier kann davon ausgegangen werden, dass der Leser den Beitrag bewusst angewählt hat.
 In der Ansicht der Haupteinträge und im Kategorie-Blog werden die Zählmarken mit Lazy-Loading geladen und bei voller Beitragsansicht etwa in der Hälfte des Beitrags eingefügt.
-Sollte es sich um einen Introtext handeln entscheidet die Länge des Introtextes. Liegt die berechnete Zeichenanzahl unter der Mindeszeichenanzahl in den Einstellungen wird gar kein Pixel geladen. Ist der gleich oder liegt darüber wird die Zählmarke direkt nach der Mindestzeichanzahl entsprechend den Plugin-Einstellungen gerendert.
+Sollte es sich um einen Introtext handeln entscheidet die Länge des Introtextes. Liegt die berechnete Text-Länge unter der Mindeszeichenanzahl in den Einstellungen des Plugins wird gar kein Pixel geladen. Ist die Länge gleich oder liegt darüber wird die Zählmarke direkt nach der Mindestzeichanzahl entsprechend den Plugin-Einstellungen gerendert.
 
 ### Mehrseitige Beiträge
 
-Sollten Sie Ihre Beiträge als Mehrseitige Beiträge über das Joomla Plugin (pagebreak) ausspielen achten Sie bitte auf die Reihenfolge der Plugins. Das Zählerpixel VGW Plugin darf erst nach dem System Plugin **Seitenumbruch** geladen werden.
+Sollten Sie Ihre Artikel als mehrseitige Beiträge über das Joomla Plugin (pagebreak / Seitenumbruch) ausspielen, achten Sie bitte auf die Reihenfolge der Plugins. Das Zählerpixel VGW Plugin darf erst nach dem System Plugin **Seitenumbruch** geladen werden.
 
 ![Screenshot Beitrag](docs/order_plugins_pagebreak.jpg)
 
-
-
-```bash
-# Coming soon ....
-$
-```
 ## Unterstützung
 Du möchtest mich und meine zukünftigen Entwicklungen unterstützen?!? :tada::rocket: Vielen Dank !!! :heart:
 
