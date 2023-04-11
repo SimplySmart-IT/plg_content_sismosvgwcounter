@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="4.0" group="content" method="upgrade">
+	<name>plg_content_sismosvgwcounter</name>
+	<author>Martina Scholz</author>
+	<creationDate>2023-04</creationDate>,
+	<copyright>(C) 2023 Martina Scholz, SimplySmart-IT</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html; see LICENSE.txt</license>
+	<authorEmail>martina@simplysmart-it.de</authorEmail>
+	<authorUrl>https://simplysmart-it.de</authorUrl>
+	<version>1.0.0-beta</version>
+	<description>PLG_CONTENT_SISMOSVGWCOUNTER_XML_DESCRIPTION</description>
+	<namespace path="src">Joomla\Plugin\Content\Sismosvgwcounter</namespace>
+	<!-- Scripts to run on installation -->
+	<scriptfile>script.php</scriptfile>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<!-- Plugin files -->
+	<files>
+		<filename plugin="sismosvgwcounter">sismosvgwcounter.php</filename>
+		<folder>layouts</folder>
+		<folder>sql</folder>
+		<folder>src</folder>
+	</files>
+	<media folder="media" destination="plg_content_sismosvgwcounter">
+		<folder>css</folder> 
+		<folder>images</folder>
+		<folder>js</folder>
+	</media>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/plg_content_sismosvgwcounter.ini</language>
+		<language tag="en-GB">en-GB/plg_content_sismosvgwcounter.sys.ini</language>
+		<language tag="de-DE">de-DE/plg_content_sismosvgwcounter.ini</language>
+		<language tag="de-DE">de-DE/plg_content_sismosvgwcounter.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" >
+			<fieldset name="basic" addfieldprefix="Joomla\Plugin\Content\Sismosvgwcounter\Field">
+				<field
+					name="minlength"
+					type="number"
+					step="100"
+					default="1800"
+					required="true"
+					label="PLG_CONTENT_SISMOSVGWCOUNTER_MINLENGTH_SETTING_FIELD_LABEL"
+					description="PLG_CONTENT_SISMOSVGWCOUNTER_MINLENGTH_SETTING_FIELD_DESC"
+				/>
+				<field
+					name="serveraddress"
+					type="text"
+					maxlength="150"
+					default="https://vg08.met.vgwort.de/na/"
+					hint="PLG_CONTENT_SISMOSVGWCOUNTER_SERVER_SETTING_FIELD_LABEL"
+					required="true"
+					label="PLG_CONTENT_SISMOSVGWCOUNTER_SERVER_SETTING_FIELD_LABEL"
+					description="PLG_CONTENT_SISMOSVGWCOUNTER_SERVER_SETTING_FIELD_DESC"
+				/>
+				<field
+					name="sslswitch"
+					type="radio"
+					label="PLG_CONTENT_SISMOSVGWCOUNTER_SSLSWITCH_SETTING_FIELD_LABEL"
+					description="PLG_CONTENT_SISMOSVGWCOUNTER_SSLSWITCH_SETTING_FIELD_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<!-- TODO <field
+					name="allowed_categories"
+					type="category"
+					label="PLG_CONTENT_SISMOSVGWCOUNTER_ALLOWEDCATEGORIES_SETTING_FIELD_LABEL"
+					extension="com_content"
+					multiple="true"
+					layout="joomla.form.field.list-fancy-select"
+					default=" "
+					parentclass=""
+					>
+					<option value=" ">JOPTION_ALL_CATEGORIES</option>
+				</field>
+				<field
+					name="filter_contacts"
+					type="category"
+					label="PLG_CONTENT_SISMOSVGWCOUNTER_FILTERCONTACTS_SETTING_FIELD_LABEL"
+					extension="com_contact"
+					multiple="true"
+					layout="joomla.form.field.list-fancy-select"
+					default=" "
+					parentclass=""
+					>
+					<option value=" ">JOPTION_ALL_CATEGORIES</option>
+				</field> -->
+				<field 
+					type="vgwinfo" 
+					name="vgwinfo" 
+					class="text"
+					parentclass="stack span-12"
+					label="PLG_CONTENT_SISMOSVGWCOUNTER_INFO_SETTING_FIELD_LABEL"
+					addfieldprefix="Joomla\Plugin\Content\Sismosvgwcounter\Field"
+					/>
+				<field
+					name="sismosinfo"
+					type="sismosinfo"
+				/>
+			</fieldset>
+			<fieldset
+				name="integration_vgwcounter"
+				label="PLG_CONTENT_SISMOSVGWCOUNTER_SETTING_IMPORT_LABEL"
+				>
+				<field
+					name="vgwimport"
+					type="vgwimport"
+					label="PLG_CONTENT_SISMOSVGWCOUNTER_SETTING_IMPORT_UPLOAD"
+					addfieldprefix="Joomla\Plugin\Content\Sismosvgwcounter\Field"
+				/>
+
+			</fieldset>
+			<fieldset
+				name="list_vgwcounter"
+				label="PLG_CONTENT_SISMOSVGWCOUNTER_SETTING_LIST_LABEL"
+				>
+				<field
+					name="vgwentries"
+					type="vgwentries"
+					label="PLG_CONTENT_SISMOSVGWCOUNTER_SETTING_ENTRIES_LABEL"
+					addfieldprefix="Joomla\Plugin\Content\Sismosvgwcounter\Field"
+					parentclass="stack span-2"
+				/>
+
+			</fieldset>
+		</fields>
+	</config>
+	<!-- Update servers -->
+	<updateservers>
+		<server type="extension" priority="1" name="VGWCounter Plugin SimplySmart Update Site">https://raw.githubusercontent.com/simplysmart-it/plg_content_sismosvgwcounter/main/update.xml</server>
+	</updateservers>
+</extension>
